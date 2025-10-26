@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Andrew Auxilio</title>
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --ink: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --accent: #1f2937;
+      --pad: 22px;
+      --maxw: 750px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 40px auto;
+      padding: 0 var(--pad);
+    }
+
+    .sheet {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: calc(var(--pad) * 1.2);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+    }
+
+    /* Header: photo + name */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      flex-shrink: 0;
+    }
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .id { flex: 1; }
+
+    .name {
+      font-size: 32px;
+      font-weight: 800;
+      margin: 0;
+    }
+    .role {
+      color: var(--muted);
+      margin-top: 4px;
+      font-size: 16px;
+    }
+
+    /* About Me */
+    .about { margin-top: 24px; color: var(--accent); }
+
+    /* Skills */
+    .skills { margin-top: 32px; }
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .pill { border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-size: 14px; color: var(--accent); }
+
+    /* Experience */
+    .experience { margin-top: 32px; }
+    .xp { margin-bottom: 16px; border-bottom: 1px solid var(--line); padding-bottom: 10px; }
+    .where { font-weight: 700; }
+    .title { color: var(--accent); }
+    .when { color: var(--muted); font-size: 14px; }
+    ul { margin: 6px 0 0 18px; color: var(--accent); }
+
+    /* Education */
+    .education { margin-top: 32px; }
+
+    .tech { font-style: italic; color: #666; margin-top: 4px; }
+
+    .skill { width: auto; height: 35px; }
+
+    /* Footer */
+    .footer {
+      margin-top: 30px;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .social {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .social-icon {
+      width: 28px;
+      height: 28px;
+    }
+    .social a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      display: inline-flex;
+    }
+    .social a:hover { color: var(--accent); }
+
+    /* ------- Mobile tweaks ------- */
+    @media (max-width: 640px) {
+      .wrap { margin: 24px auto; }
+      .sheet { padding: var(--pad); }
+
+      .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+      }
+      .photo { width: 96px; height: 96px; }
+      .name { font-size: 24px; }
+      .role { font-size: 14px; }
+
+      .pill-list { justify-content: center; }
+
+      .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+      }
+      .social-icon {
+        width: 32px; /* larger tap target */
+        height: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="wrap">
+  <article class="sheet">
+    <!-- Header -->
+    <header class="header">
+      <figure class="photo">
+        <img src="assets/headshot.png" alt="Headshot" loading="lazy" />
+      </figure>
+      <div class="id">
+        <h1 class="name">Andrew Auxilio</h1>
+        <div class="role">Software Engineer</div>
+      </div>
+    </header>
+
+    <!-- About Me -->
+    <section class="about">
+      <h2>About Me</h2>
+      <p>
+        I’m a backend engineer who loves building scalable systems with PHP, Laravel, and AWS. I also enjoy working across the stack with Vue.js, Node.js, and TypeScript.
+        <br><br>
+        When I’m not coding, I’m usually chasing my dog around the park or learning the ropes of new fatherhood. Lately, I’ve been exploring Dart, Flutter, and Go just for fun.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section class="skills">
+      <h2>Skills</h2>
+      <div class="pill-list">
+        <img class="skill" alt="PHP" src="assets/php.png" loading="lazy">
+        <img class="skill" alt="Symfony" src="assets/symfony.webp" loading="lazy">
+        <img class="skill" alt="Laravel" src="assets/laravel.png" loading="lazy">
+        <img class="skill" alt="MySQL" src="assets/mysql.png" loading="lazy">
+        <img class="skill" alt="AWS" src="assets/aws.png" loading="lazy">
+        <img class="skill" alt="JavaScript" src="assets/js.png" loading="lazy">
+        <img class="skill" alt="TypeScript" src="assets/typescript.png" loading="lazy">
+        <img class="skill" alt="Vue.js" src="assets/vue.png" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="experience">
+      <h2>Experience</h2>
+      <div class="xp">
+        <div class="where">Netball Hub</div>
+        <div class="title">Creator</div>
+        <div class="when">2025 — Present</div>
+        <ul>
+          <li>Built a fan engagement platform where Netball fans can play netball tipping and fantasy</li>
+        </ul>
+        <div class="tech">
+          <strong>Technologies:</strong> Symfony, Vue.js, MySQL, AWS
+        </div>
+      </div>
+      <div class="xp">
+        <div class="where">Genius Sports</div>
+        <div class="title">Backend Developer</div>
+        <div class="when">2022 — Present</div>
+        <ul>
+          <li>Built scalable back-end applications for fan engagement platforms.</li>
+          <li>Maintained existing and legacy back-end applications </li>
+        </ul>
+        <div class="tech">
+          <strong>Technologies:</strong> Symfony, MySQL, AWS
+        </div>
+      </div>
+      <div class="xp">
+        <div class="where">Aussie Broadband</div>
+        <div class="title">Full-stack Software Engineer</div>
+        <div class="when">2020 — 2022</div>
+        <ul>
+          <li>Maintained legacy applications</li>
+          <li>Migrated features to new technologies</li>
+          <li>Implemented mobile phone plans and mobile phone delivery system.</li>
+        </ul>
+        <div class="tech">
+          <strong>Technologies:</strong> Laravel, Vue.js, PostgreSQL
+        </div>
+      </div>
+      <div class="xp">
+        <div class="where">Dowell Windows & Doors</div>
+        <div class="title">Junior Full-stack Software Engineer</div>
+        <div class="when">2018 — 2020</div>
+        <ul>
+          <li>Built a prototype system to enhance frame cutting efficiency and reduce production waste.</li>
+          <li>Built the prototype of the company's new website.</li>
+        </ul>
+        <div class="tech">
+          <strong>Technologies:</strong> Laravel, Vue.js, SQLServer
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="education">
+      <h2>Education</h2>
+      <p><strong>RMIT University</strong> — B.S. Information Technology</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div>References available on request</div>
+      <div class="social" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/andrewanthonyauxilio/" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+          <img class="social-icon" alt="LinkedIn" src="assets/linkedin.png" loading="lazy">
+        </a>
+        <a href="https://github.com/brightside-dev" target="_blank" title="GitHub" aria-label="GitHub">
+          <img class="social-icon" alt="GitHub" src="assets/github.png" loading="lazy">
+        </a>
+      </div>
+      <div>Last updated: <time datetime="2025-01-01">Oct 2025</time></div>
+    </footer>
+  </article>
+</main>
+</body>
+</html>
